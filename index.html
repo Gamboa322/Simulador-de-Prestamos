@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador de Préstamos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Préstamos</h1>
+    <form id="loanForm">
+      <div class="form-group">
+        <label>Monto del préstamo:</label>
+        <input type="number" id="monto" placeholder="Ej. 10000" required />
+      </div>
+      <div class="form-group">
+        <label>Tasa de interés anual (%):</label>
+        <input type="number" id="interes" step="0.1" placeholder="Ej. 12.5" required />
+      </div>
+      <div class="form-group">
+        <label>Plazo (meses):</label>
+        <input type="number" id="plazo" placeholder="Ej. 12" required />
+      </div>
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado" class="resultado oculto">
+      <h2>Resumen del Préstamo</h2>
+      <p><strong>Pago mensual:</strong> <span id="pagoMensual"></span></p>
+      <p><strong>Total a pagar:</strong> <span id="totalPago"></span></p>
+      <p><strong>Total de intereses:</strong> <span id="totalInteres"></span></p>
+
+      <h3>Tabla de Amortización</h3>
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th>Mes</th>
+            <th>Capital</th>
+            <th>Interés</th>
+            <th>Pago</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody id="amortizacion"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
